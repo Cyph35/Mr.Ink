@@ -15,6 +15,7 @@
   --coral: #f2795f;
   --kelp: #4fbf85;
   --sand: #f1d98c;
+  --sage: #bed7ca;
   --max: 1180px;
   --display: 'Bagel Fat One', 'Baloo 2', system-ui, sans-serif;
   --body: 'Baloo 2', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -133,11 +134,12 @@ span.btn:hover { transform: none; box-shadow: 4px 4px 0 var(--ink); }
 /* ---------- sections ---------- */
 .scene { position: relative; padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .scene-pink { background: var(--pink); }
-.scene-sun { background: var(--sun); }
+.scene-sun { background: var(--sage); }
+.scene-sun h2, .scene-sun h3 { color: #fff; }
 .scene-sea { background: var(--sea); }
 .band { background: var(--cream); line-height: 0; }
 .band-pink { background: var(--pink); }
-.band-sun { background: var(--sun); }
+.band-sun { background: var(--sage); }
 .band-sea { background: var(--sea); }
 .band-cream { background: var(--cream); }
 .section-intro { max-width: 40rem; font-size: 1.25rem; font-weight: 600; }

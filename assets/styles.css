@@ -41,7 +41,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; m
 h1 { font-size: clamp(2.7rem, 6.4vw, 5rem); color: #fff; -webkit-text-stroke-width: 3.5px; text-shadow: 4px 6px 0 var(--ink); }
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
 h3 { font-size: 1.5rem; -webkit-text-stroke-width: 1.5px; text-shadow: 2px 3px 0 var(--ink); }
-p { margin: 0 0 1em; }
+p { margin: 0 0 1em; text-wrap: pretty; }
+h1, h2, h3, .panel-cap, .sign-board, .bubble-talk { text-wrap: balance; }
 
 /* ---------- buttons ---------- */
 .btn { display: inline-block; font: 700 1.1rem/1 var(--body); padding: 0.9rem 1.5rem; border: 3px solid var(--ink); border-radius: 999px; background: var(--sun); color: var(--ink); text-decoration: none; cursor: pointer; box-shadow: 4px 4px 0 var(--ink); transition: transform 0.12s, box-shadow 0.12s; }
@@ -173,11 +174,12 @@ span.btn:hover { transform: none; box-shadow: 4px 4px 0 var(--ink); }
 /* the wardrobe: a board-game path, a clothesline, quests */
 .path { list-style: none; margin: 2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem 0.4rem; counter-reset: stop; }
 .path li { position: relative; flex: 1 1 10rem; padding: 0 0.6rem 0 0; }
-.path li::after { content: ''; position: absolute; top: 1.6rem; left: 3.4rem; right: 0.2rem; border-top: 5px dotted var(--ink); }
-.path li:last-child::after { display: none; }
-.stop { display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border: 3px solid var(--ink); border-radius: 50%; background: var(--pink); font: 400 1.05rem/1 var(--display); box-shadow: 3px 3px 0 var(--ink); }
+.stop-row { display: flex; align-items: center; gap: 6px; }
+.stop-line { flex: 1; min-width: 1rem; margin-right: 0.3rem; border-top: 5px dotted var(--ink); }
+.path li:last-child .stop-line { display: none; }
+.stop { display: inline-grid; place-items: center; min-width: 3.4rem; height: 3.4rem; padding: 0 0.8rem; border: 3px solid var(--ink); border-radius: 999px; background: var(--pink); font: 400 1.05rem/1 var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; box-shadow: 3px 3px 0 var(--ink); }
 .path li:nth-child(even) .stop { background: var(--sea); }
-.path li:last-child .stop { background: #fff; width: 4.4rem; height: 4.4rem; }
+.path li:last-child .stop { background: #fff; min-width: 4.4rem; height: 4.4rem; padding: 0 1rem; }
 .path .stop-label { margin: 0.5rem 0 0; font-weight: 700; line-height: 1.2; }
 .path .stop-what { margin: 0; font-size: 0.98rem; line-height: 1.25; }
 .note { display: inline-block; margin: 1.2rem 0 0; padding: 0.6rem 1rem; border: 3px solid var(--ink); border-radius: var(--blob-2); background: #fff; font-weight: 700; }
